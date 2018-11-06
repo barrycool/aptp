@@ -122,6 +122,19 @@ else ifeq ($(ARCH),RPI)
 		$(SRC_DIR)/addressapi.hpp \
 		$(SRC_DIR)/rawpacket.hpp \
 		$(SRC_DIR)/socket.hpp 
+else ifeq ($(ARCH),mt8516)
+	CFLAGS_G += -DRPI -DAPTP
+	OBJ_FILES += $(OBJ_DIR)/linux_hal_generic.o \
+		$(OBJ_DIR)/linux_hal_generic_adj.o \
+		$(OBJ_DIR)/linux_hal_rpi3.o \
+		$(OBJ_DIR)/addressapi.o \
+		$(OBJ_DIR)/socket.o \
+		$(OBJ_DIR)/addressregisterlistener.o
+	HEADER_FILES += $(SRC_DIR)/linux_hal_generic.hpp \
+		$(SRC_DIR)/addressregisterlistener.hpp \
+		$(SRC_DIR)/addressapi.hpp \
+		$(SRC_DIR)/rawpacket.hpp \
+		$(SRC_DIR)/socket.hpp 
 else
 	OBJ_FILES += $(OBJ_DIR)/linux_hal_generic.o \
 		$(OBJ_DIR)/linux_hal_generic_adj.o

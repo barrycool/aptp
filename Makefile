@@ -1,5 +1,6 @@
 descend = \
 	mkdir -p $(OUTPUT)$(1) && \
+	mkdir -p $(OUTPUT)$(1)/obj && \
 	$(MAKE) $(COMMAND_O) subdir=$(if $(subdir),$(subdir)/$(1),$(1)) $(PRINT_DIR) -C $(1) $(2)
 
 help:
