@@ -30,3 +30,6 @@
 *.exe
 *.out
 *.app
+
+gptp/linux/build/obj/
+
