@@ -36,15 +36,15 @@ CFLAGS_G = -Wall -g -I. -I../../common -I../src \
 # Check to see if PTP cross-timestamping is supported in hardware/driver
 # and, if so, add flag to compile in support
 
-PRECISE_TIME_TEST = "\#include <linux/ptp_clock.h>\\n\
-\#ifdef PTP_SYS_OFFSET_PRECISE\\nint main(){return 0;}\\n\#endif"
+#PRECISE_TIME_TEST = "\#include <linux/ptp_clock.h>\\n\
+#\#ifdef PTP_SYS_OFFSET_PRECISE\\nint main(){return 0;}\\n\#endif"
 
-HAS_PRECISE_TIME = $(shell echo $(PRECISE_TIME_TEST) | $(CC) -xc - \
--I$(ALTERNATE_LINUX_INCPATH) -o /dev/null > /dev/null 2>&1 ; echo $$?)
+#HAS_PRECISE_TIME = $(shell echo $(PRECISE_TIME_TEST) | $(CC) -xc - \
+#-I$(ALTERNATE_LINUX_INCPATH) -o /dev/null > /dev/null 2>&1 ; echo $$?)
 
-ifeq ($(HAS_PRECISE_TIME),0)
-       CFLAGS_G += -DPTP_HW_CROSSTSTAMP
-endif
+#ifeq ($(HAS_PRECISE_TIME),0)
+#       CFLAGS_G += -DPTP_HW_CROSSTSTAMP
+#endif
 
 CPPFLAGS_G = $(CFLAGS_G) -std=c++0x -Wnon-virtual-dtor
 LDFLAGS_G = 

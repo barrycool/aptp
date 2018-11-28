@@ -684,7 +684,7 @@ std::shared_ptr<PTPMessageCommon> buildPTPMessage
 		}
 		{
 			std::shared_ptr<PTPMessagePathDelayReq> pdelay_req_msg =
-			    std::make_shared<PTPMessagePathDelayReq>(port);
+			    std::make_shared<PTPMessagePathDelayReq>();
 			pdelay_req_msg->messageType = messageType;
 
 #if 0
@@ -732,7 +732,7 @@ std::shared_ptr<PTPMessageCommon> buildPTPMessage
 		}
 		{
 			std::shared_ptr<PTPMessagePathDelayResp> pdelay_resp_msg =
-			    std::make_shared<PTPMessagePathDelayResp>(port);
+			    std::make_shared<PTPMessagePathDelayResp>();
 			pdelay_resp_msg->messageType = messageType;
 			// Copy in v2 PDelay Response specific fields
 			pdelay_resp_msg->requestingPortIdentity =
@@ -791,7 +791,7 @@ std::shared_ptr<PTPMessageCommon> buildPTPMessage
 //     }
 		{
 			std::shared_ptr<PTPMessagePathDelayRespFollowUp> pdelay_resp_fwup_msg =
-			    std::make_shared<PTPMessagePathDelayRespFollowUp>(port);
+			    std::make_shared<PTPMessagePathDelayRespFollowUp>();
 			pdelay_resp_fwup_msg->messageType = messageType;
 			// Copy in v2 PDelay Response specific fields
 			pdelay_resp_fwup_msg->requestingPortIdentity =

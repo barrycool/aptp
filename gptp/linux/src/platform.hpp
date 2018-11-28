@@ -36,6 +36,7 @@
 
 #include <stdint.h>
 #include <time.h>
+typedef __time_t time_t;
 
 /**@file*/
 
