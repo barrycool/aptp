@@ -952,7 +952,6 @@ bool LinuxSharedMemoryIPC::init(OS_IPC_ARG *barg)
 			group_name = arg->GroupName();
 		}
 	}
-
 	grp = getgrnam(group_name.c_str());
 	if( grp == NULL ) {
 		GPTP_LOG_ERROR("Group %s not found, will try root (0) instead", group_name.c_str());

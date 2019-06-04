@@ -870,7 +870,7 @@ std::shared_ptr<PTPMessageCommon> buildPTPMessage
 			       PTP_ANNOUNCE_GRANDMASTER_PRIORITY1
 			       (PTP_ANNOUNCE_OFFSET),
 			       sizeof(annc->grandmasterPriority1));
-			memcpy( &annc->grandmasterClockQuality,
+			memcpy( &(annc->grandmasterClockQuality),
 				buf+
 				PTP_ANNOUNCE_GRANDMASTER_CLOCK_QUALITY
 				(PTP_ANNOUNCE_OFFSET),
@@ -885,7 +885,7 @@ std::shared_ptr<PTPMessageCommon> buildPTPMessage
 			       PTP_ANNOUNCE_GRANDMASTER_PRIORITY2
 			       (PTP_ANNOUNCE_OFFSET),
 			       sizeof(annc->grandmasterPriority2));
-			memcpy(&(annc->grandmasterIdentity),
+			memcpy((annc->grandmasterIdentity),
 			       buf +
 			       PTP_ANNOUNCE_GRANDMASTER_IDENTITY
 			       (PTP_ANNOUNCE_OFFSET),
